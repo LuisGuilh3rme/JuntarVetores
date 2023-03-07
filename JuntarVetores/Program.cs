@@ -64,6 +64,26 @@ void ImprimirVetor(int[] vet)
     Console.WriteLine();
 }
 
+// Vetor C ordenado em ordem crescente:
+C = OrdenarVetor(C);
+
+Console.Write("C ordenado: ");
+ImprimirVetor(C);
+
+int[] OrdenarVetor(int[] vet) {
+    for (int i = 0; i < vet.Length; i++)
+    {
+        for (int j = 0; j < vet.Length; j++)
+        {
+            if (vet[i] < vet[j])
+            {
+                (vet[i], vet[j]) = (vet[j], vet[i]);
+            }
+        }
+    }
+    return vet;
+}
+
 // Aviso de erro:
 
 void AvisoErro(string erro)
