@@ -4,8 +4,8 @@ int[] A, B, C;
 // Construindo e determinando espaço dos vetores
 A = new int[5];
 B = new int[5];
-C = new int[10];
-
+C = new int[A.Length + B.Length];
+Console.WriteLine(C.Length);
 // Populando vetores A e B
 Console.WriteLine("Vetor A:");
 A = PopularVetor(A);
@@ -35,7 +35,7 @@ int[] JuntarVetores(int[] vetA, int[] vetB, int[] vetFinal)
 
     for (int i = 0; i < vetB.Length; i++)
     {
-        vetFinal[i + 5] = vetB[i];
+        vetFinal[i + vetA.Length] = vetB[i];
     }
 
     return vetFinal;
