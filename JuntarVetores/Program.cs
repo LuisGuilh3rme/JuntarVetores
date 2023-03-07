@@ -1,4 +1,6 @@
 ﻿// Primeiramente os vetores devem ser declarados
+using System.Drawing;
+
 int[] A, B, C;
 
 // Construindo e determinando espaço dos vetores
@@ -54,8 +56,9 @@ ImprimirVetor(C);
 
 void ImprimirVetor(int[] vet)
 {
-    foreach (int valor in vet) {
-        Console.Write(valor + " ");
+    for (int i = 0; i < vet.Length; i++)
+    {
+        Console.Write(vet[i] + " ");
     }
     Console.WriteLine();
 }
