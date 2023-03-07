@@ -13,9 +13,11 @@ int[] PopularVetor(int[] vet)
 {
     for (int i = 0; i < vet.Length; i++)
     {
-        Console.WriteLine("Posição [{0}] do vetor:", i + 1);
+        Console.Write("Posição [{0}] do vetor:", i + 1);
         if (!int.TryParse(Console.ReadLine(), out vet[i]))
-            Console.WriteLine("Valor inválido, substituido por zero");
+        {
+            AvisoErro("Valor inválido, substituido por zero\n");
+        }
     }
     return vet;
 }
@@ -44,13 +46,13 @@ int[] JuntarVetores(int[] vetA, int[] vetB)
 
 Console.WriteLine();
 // Imprimindo valores de cada vetor:
-Console.WriteLine("Vetor A:");
+Console.Write("Vetor A: ");
 ImprimirVetor(A);
 
-Console.WriteLine("Vetor B:");
+Console.Write("Vetor B: ");
 ImprimirVetor(B);
 
-Console.WriteLine("Vetor C (A + B):");
+Console.Write("Vetor C (A + B): ");
 ImprimirVetor(C);
 
 void ImprimirVetor(int[] vet)
@@ -60,4 +62,14 @@ void ImprimirVetor(int[] vet)
         Console.Write(vet[i] + " ");
     }
     Console.WriteLine();
+}
+
+// Aviso de erro:
+
+void AvisoErro(string erro)
+{
+    ConsoleColor aux = Console.ForegroundColor;
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine(erro);
+    Console.ForegroundColor = aux;
 }
