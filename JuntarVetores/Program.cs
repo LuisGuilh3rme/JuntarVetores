@@ -71,13 +71,15 @@ Console.Write("C ordenado: ");
 ImprimirVetor(C);
 
 int[] OrdenarVetor(int[] vet) {
-    for (int i = 0; i < vet.Length; i++)
+    for (int i = 0; i < (vet.Length - 1); i++)
     {
-        for (int j = 0; j < vet.Length; j++)
+        for (int j = (i + 1); j < vet.Length; j++)
         {
-            if (vet[i] < vet[j])
+            if (vet[i] > vet[j])
             {
-                (vet[i], vet[j]) = (vet[j], vet[i]);
+                int aux = vet[i];
+                vet[i] = vet[j];
+                vet[j] = aux;
             }
         }
     }
