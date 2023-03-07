@@ -5,7 +5,7 @@ int[] A, B, C;
 A = new int[5];
 B = new int[5];
 C = new int[A.Length + B.Length];
-Console.WriteLine(C.Length);
+
 // Populando vetores A e B
 Console.WriteLine("Vetor A:");
 A = PopularVetor(A);
